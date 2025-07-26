@@ -68,6 +68,17 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			backgroundImage: {
+				'gradient-ocean': 'var(--gradient-ocean)',
+				'gradient-deployment': 'var(--gradient-deployment)',
+				'gradient-sky': 'var(--gradient-sky)',
+				'gradient-wave': 'var(--gradient-wave)'
+			},
+			boxShadow: {
+				'container': 'var(--shadow-container)',
+				'ship': 'var(--shadow-ship)',
+				'glow': 'var(--shadow-glow)'
+			},
 			keyframes: {
 				'accordion-down': {
 					from: {
@@ -84,11 +95,32 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'sail': {
+					'0%': { transform: 'translateX(-100px)' },
+					'100%': { transform: 'translateX(100vw)' }
+				},
+				'wave': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'container-pop': {
+					'0%': { transform: 'scale(1) translateY(0)' },
+					'50%': { transform: 'scale(1.1) translateY(-10px)' },
+					'100%': { transform: 'scale(1) translateY(0)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-20px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'sail': 'sail 20s linear infinite',
+				'wave': 'wave 3s ease-in-out infinite',
+				'container-pop': 'container-pop 0.6s ease-out',
+				'float': 'float 6s ease-in-out infinite'
 			}
 		}
 	},
